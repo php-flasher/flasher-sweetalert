@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
+namespace Flasher\SweetAlert\Prime;
+
 use Flasher\Prime\Container\FlasherContainer;
 use Flasher\Prime\Notification\Envelope;
 use Flasher\Prime\Notification\Type;
-use Flasher\SweetAlert\Prime\SweetAlertInterface;
 
-if (!function_exists('sweetalert')) {
+if (!\function_exists('Flasher\SweetAlert\Prime\sweetalert')) {
     /**
      * Creates a Sweetalert notification or returns the Sweetalert factory.
      *
@@ -32,7 +33,7 @@ if (!function_exists('sweetalert')) {
     {
         $factory = FlasherContainer::create('flasher.sweetalert');
 
-        if (0 === func_num_args()) {
+        if (0 === \func_num_args()) {
             return $factory;
         }
 
